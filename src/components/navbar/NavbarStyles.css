@@ -1,0 +1,135 @@
+.navbar-items {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  width: 95%;
+  height: 80px;
+  border-radius: 13px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9999;
+}
+.navbar-logo {
+  color: #222;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.navbar-logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 10px;
+  list-style: none;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: #222;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+}
+
+.nav-links:hover {
+  background-color: #01959a;
+  color: #fff;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-sign-up {
+  text-decoration: none;
+  white-space: nowrap;
+  color: #222;
+  border-radius: 0.3rem;
+  padding: 0.7rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.nav-sign-up:hover {
+  background-color: #151516;
+  color: #fff;
+}
+.menu-icons {
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .navbar-items {
+    z-index: 99;
+  }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    opacity: 0;
+    align-items: stretch;
+    padding: 80px 0 30px 0;
+    margin: 0;
+    transition: 0.3s ease-in-out;
+    border-radius: 13px;
+  }
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+  }
+  .nav-links {
+    width: 100%;
+    padding: 2rem 0;
+    justify-content: center;
+  }
+  /* li {
+    width: 30%;
+    align-self: center;
+  } */
+  .nav-links:hover {
+    background-color: #01959a;
+    transition: none;
+  }
+  .nav-sign-up {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: #01959a;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .nav-sign-up:hover {
+    background-color: #01959a;
+    color: #fff;
+  }
+  .mobile-li {
+    width: 80%;
+    align-self: center;
+  }
+  .menu-icons {
+    display: block;
+    cursor: pointer;
+  }
+}
