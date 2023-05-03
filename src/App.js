@@ -9,6 +9,7 @@ import Footer from "./components/footer/Footer";
 import Account from "./components/account/Account";
 import PrivateRoutes from "./components/PrivateRoutes";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
