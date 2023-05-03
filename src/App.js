@@ -8,6 +8,7 @@ import Register from "./pages/register/Register";
 import Footer from "./components/footer/Footer";
 import Account from "./components/account/Account";
 import PrivateRoutes from "./components/PrivateRoutes";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+      <ToastContainer />
     </div>
   );
 }
