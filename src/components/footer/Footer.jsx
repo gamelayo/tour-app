@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  FaFacebook,
   FaFacebookSquare,
   FaInstagramSquare,
   FaTwitterSquare,

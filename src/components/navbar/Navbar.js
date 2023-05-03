@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./NavbarStyles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FaAddressBook,
   FaBars,
@@ -9,15 +9,25 @@ import {
   FaInfoCircle,
   FaTimes,
 } from "react-icons/fa";
+import { logout, reset } from "../../features/auth/authSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(true);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user } = useSelector((state) => state.auth);
 
   const toggleMenu = () => {
     setMenu(!menu);
   };
   const closeNav = () => {
     setMenu(!menu);
+  };
+  const onLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+    navigate("/");
   };
 
   return (
@@ -55,9 +65,15 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="mobile-li" onClick={closeNav}>
-          <Link to="#" className="nav-sign-up">
-            Sign Up
-          </Link>
+          {user ? (
+            <button onClick={onLogout} className="nav-logout">
+              LogOut({user.name})
+            </button>
+          ) : (
+            <Link to="/log-in" className="nav-sign-up">
+              Sign Up
+            </Link>
+          )}
         </li>
       </ul>
     </nav>

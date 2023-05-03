@@ -2,9 +2,11 @@ import React from "react";
 import Hero from "../../components/hero/Hero";
 import image from "../../assets/night.jpg";
 import AboutUs from "./AboutUs";
+import Navbar from "../../components/navbar/Navbar";
 const About = () => {
   return (
     <div>
+      <Navbar />
       <Hero cName="hero-about" heroImg={image} title="About" btnClass="hide" />
       <AboutUs
         heading="Our History"
